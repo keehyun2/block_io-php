@@ -112,7 +112,9 @@ class BlockIo
         $result = curl_exec($ch);
         curl_close($ch);
 
-	$json_result = json_decode($result);
+    $json_result = json_decode($result);
+    
+    //print '<br>'.$result.'<br>';
 
 	if ($json_result->status != 'success') { throw new Exception('Failed: ' . $json_result->data->error_message); }
 
